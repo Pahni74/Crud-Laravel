@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Kelas;
+use App\MataPelajaran;
 use Illuminate\Http\Request;
 
-class KelasController extends Controller
+class MataPelajaranController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +18,8 @@ class KelasController extends Controller
 
     public function index()
     {
-        $kelas = Kelas::all();
-        return view('kelas.index',compact('kelas'));
+        $mapel = MataPelajaran::all();
+        return view('mapel.index',compact('mapel'));
     }
 
     /**
@@ -29,8 +29,7 @@ class KelasController extends Controller
      */
     public function create()
     {
-
-        return view('kelas.create');
+        return view('mapel.create');
     }
 
     /**
@@ -41,60 +40,60 @@ class KelasController extends Controller
      */
     public function store(Request $request)
     {
-        $kelas = new Kelas();
-        $kelas->nama=$request->nama;
-        $kelas->save();
-        return redirect()->route('kelas.index')->with('status','Data Berhasil Di Tambahkan');;
+        $mapel = new MataPelajaran();
+        $mapel->mapel=$request->mapel;
+        $mapel->save();
+        return redirect()->route('mapel.index')->with('status','Data Berhasil Di Tambahkan');;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Kelas  $kelas
+     * @param  \App\MataPelajaran  $mataPelajaran
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $kelas = Kelas::findOrFail($id);
-        return view('kelas.show',compact('kelas'));
+        $mapel = MataPelajaran::findOrFail($id);
+        return view('mapel.show',compact('mapel'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Kelas  $kelas
+     * @param  \App\MataPelajaran  $mataPelajaran
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $kelas = Kelas::findOrFail($id);
-        return view('kelas.edit',compact('kelas'));
+        $mapel = MataPelajaran::findOrFail($id);
+        return view('mapel.edit',compact('mapel'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Kelas  $kelas
+     * @param  \App\MataPelajaran  $mataPelajaran
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $kelas = Kelas::findOrFail($id);
-        $kelas->nama = $request->nama;
-        $kelas->save();
-        return redirect()->route('kelas.index')->with('status','Data Berhasil Di Update');
+        $mapel = MataPelajaran::findOrFail($id);
+        $mapel->mapel = $request->mapel;
+        $mapel->save();
+        return redirect()->route('mapel.index')->with('status','Data Berhasil Di Update');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Kelas  $kelas
+     * @param  \App\MataPelajaran  $mataPelajaran
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $kelas = Kelas::findOrFail($id)->delete();
-        return redirect()->route('kelas.index')->with('status','Data Berhasil Di Hapus');
+        $mapel = MataPelajaran::findOrFail($id)->delete();
+        return redirect()->route('mapel.index')->with('status','Data Berhasil Di Hapus');
     }
 }

@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Kelas extends Model
+class MataPelajaran extends Model
 {
-    protected $fillable =['nama'];
+    protected $fillable =['mapel'];
     public $timestamps =true;
 }

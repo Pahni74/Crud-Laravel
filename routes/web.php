@@ -23,3 +23,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 #CRUD
 #Route::group('[prefix' => 'admin']);
 Route::resource('kelas', 'KelasController');
+Route::resource('mapel', 'MataPelajaranController');
