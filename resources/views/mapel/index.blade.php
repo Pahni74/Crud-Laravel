@@ -31,7 +31,7 @@
                                 @foreach ($mapel as $data)
                                 <tr>
                                     <td>{{ $no++ }}</td>
-                                    <td>{{$data->mapel}}</td>
+                                    <td>{{$data->nama}}</td>
                                     <td><a href="{{route('mapel.show',$data->id)}}" class="btn btn-info">Show</a></td>
                                     <td><a href="{{route('mapel.edit',$data->id)}}" class="btn btn-success">Edit</a></td>
 

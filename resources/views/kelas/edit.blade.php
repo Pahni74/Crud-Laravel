@@ -12,7 +12,7 @@
                                 @csrf
                                 @method('PATCH')
                             <label>Kelas</label>
-                            <input type="text" name="nama" value="{{$kelas->nama}}" class="form-control">                        </div>
+                            <input type="text" name="kelas" value="{{$kelas->kelas}}" class="form-control">                        </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Ubah Data</button>
                         </form>

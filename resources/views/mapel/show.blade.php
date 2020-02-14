@@ -9,7 +9,7 @@
                 <div class="card-body">
                         <div class="form-group">
                             <label>Mata Pelajaran</label>
-                            <input type="text" name="nama" value="{{$mapel->mapel}}" class="form-control" readonly>
+                            <input type="text" name="nama" value="{{$mapel->nama}}" class="form-control" readonly>
                         </div>
                         <div class="form-group">
                             <a href="{{ url()->previous() }}" class="btn btn-primary">Kembali</a>

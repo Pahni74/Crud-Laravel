@@ -24,5 +24,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+        $siswa = Siswa::with('kelas')->get();
+        dd($siswa);
     }
 }

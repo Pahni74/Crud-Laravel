@@ -11,7 +11,7 @@
                         @csrf
                         <div class="form-group">
                             <label>Mata Pelajaran</label>
-                            <input type="text" name="mapel" class="form-control" required autofocus>
+                            <input type="text" name="nama" class="form-control" required autofocus>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Simpan</button>

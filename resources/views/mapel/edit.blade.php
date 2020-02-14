@@ -12,7 +12,7 @@
                                 @csrf
                                 @method('PATCH')
                             <label>Mata Pelajaran</label>
-                            <input type="text" name="mapel" value="{{$mapel->mapel}}" class="form-control" autofocus>                        </div>
+                            <input type="text" name="nama" value="{{$mapel->nama}}" class="form-control" autofocus>                        </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Ubah Data</button>
                         </form>
