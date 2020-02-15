@@ -15,9 +15,9 @@ class SiswaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function __construct(){
-    //     return $this->middleware('auth');
-    // }
+    public function __construct(){
+        return $this->middleware('auth');
+    }
 
     public function index()
     {
@@ -65,9 +65,10 @@ class SiswaController extends Controller
      */
     public function show($id)
     {
+        $mapel = Mapel::all();
         $kelas = Kelas::all();
         $siswa = Siswa::findOrFail($id);
-        return view('siswa.show',compact('siswa','kelas'));
+        return view('siswa.show',compact('siswa','kelas','mapel'));
     }
 
     /**
@@ -81,7 +82,8 @@ class SiswaController extends Controller
         $kelas = Kelas::all();
         $siswa = Siswa::findOrFail($id);
         $mapel = Mapel::all();
-        return view('siswa.edit',compact('siswa','kelas','mapel'));
+        $selected = $siswa->mapel->pluck('id')->toArray();
+        return view('siswa.edit',compact('siswa','selected','kelas','mapel'));
     }
 
     /**
@@ -111,7 +113,9 @@ class SiswaController extends Controller
      */
     public function destroy($id)
     {
-        $siswa = Siswa::findOrFail($id)->delete();
+        $siswa = Siswa::findOrFail($id);
+        $siswa->mapel()->detach();
+        $siswa->delete();
         return redirect()->route('siswa.index')->with('status','Data Berhasil Di Hapus');
     }
 }

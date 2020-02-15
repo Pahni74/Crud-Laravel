@@ -16,6 +16,10 @@
                             <textarea name="alamat"  class="form-control"  rows="5"  readonly>{{$siswa->alamat}}</textarea>
                             <label>Kelas</label>
                             <input type="text" name='kelas' class="form-control" value="{{$siswa->kelas->kelas}}" readonly>
+                            @foreach ($mapel as $value)
+                            <label>Mata Pelajaran</label>
+                            <input type="text" name="mapel" class="form-control" value="{{$value->id}}" readonly>
+                            @endforeach
                         </div>
                         <div class="form-group">
                             <a href="{{ url()->previous() }}" class="btn btn-primary">Kembali</a>

@@ -11,7 +11,7 @@
                         @csrf
                         <div class="form-group">
                             <label>Nis</label>
-                            <input type="text" name="nis" class="form-control" required>
+                            <input type="text" name="nis" class="form-control" required autofocus>
                             <label>Nama</label>
                             <input type="text" name="nama" class="form-control" required>
                             <label>Alamat</label>
@@ -24,7 +24,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="">Mata Pelajarn</label>
+                            <label for="">Mata Pelajaran</label>
                             <select name="mapel[]" class="form-control" multiple>
                                 @foreach ($mapel as $data)
                                     <option value="{{$data->id}}">{{$data->nama}}</option>
